@@ -1,0 +1,128 @@
+export const metadata = {
+    "image": "/img/ccheader.png",
+    "name": "Ultimate Carnage Chloe Collection",
+    "tags": ["Big"],
+    "lastUpdated": "2024-11-01 12:00",
+    "link": "https://drive.google.com/file/d/1y46HsckMQegCoWdjSXC8A9_Prvo4tEQA/view?usp=sharing"
+}
+
+A modpack for FlatOut UC that proves everyone's notions of "this game is unmoddable" dead wrong.
+
+This mod was built from the ground-up with my own tooling, including single-handedly reverse-engineering the database format, the track format and the car model format.  
+This makes this mod the first of its kind for the game, as custom cars for UC and fully custom tracks for any FlatOut game were completely impossible before.
+
+I have also hacked the game itself to hell and back in order to bring back the majority of FlatOut 2's handling and allow for features such as non-GFWL multiplayer, new gamemodes, more than 8 car skins, up to 31 opponents, a rally mode with pacenotes, and a lot more. 
+I've also added near-perfect support for ultrawide aspect ratios, including proper scaling of the menus, UI and in-game FOV. This comes with the neat side-effect of the menus no longer being stretched on 16:9 either!
+
+Designed with customizability in mind, this mod is open-source and includes many small improvements upon the game's code that come together to make adding your own changes a lot less of a hassle.
+
+# Installation
+
+- Make sure you have the Steam GFWL version of the game, as this is the only version this plugin is compatible with. (exe size of 4242504 bytes)
+- Plop the files into your game folder.
+- If you get an error message on startup, remove d3d9.dll from the game folder.
+- Enjoy, nya~ :3
+
+# Features
+
+- Addon AI: Neville from NFS Carbon
+- Addon car: NFSMW Cop Corvette
+- Addon BugBear Retro Demo tracks with brand new alternate routes
+- Addon BugBear Retro Demo cars
+- Addon FlatOut 1 cars
+- Addon FlatOut 1 tracks: Whattahoo Town, Hayville Farm, Bunker Hill, Brad's Sandpit, Gravel Mound, Gracie Woodland, Finchley Forest, Pinewood Meadows, Bay Circuit, Fairgrass Grounds, Redpine River, Whitefish Lake
+- Addon FlatOut 2 cars available as variants of the existing cars
+- Addon Rally Trophy cars and tracks with a new rally HUD and pacenotes with brand new icons and co-driver voices
+- Addon Tough Trucks tracks
+- A brand new gamemode: Stunt Show
+- A fourth, harder medal to most Carnage Mode events for people who want more of a challenge
+- A near-identical port of the FlatOut 2 handling
+- A new handling mode, Professional, which removes the arcadey handling elements and leaves you with more of a simcade feel
+- An option to move the vehicle camera higher up
+- An option to repaint your car in career mode for 100CR
+- An option to tune your car in career mode, changing its brake balance and nitro behavior
+- All cars and tracks unlocked by default for Single Race mode
+- Bonus variants of all Stunt cars
+- Career handling damage in the Options menu
+- Carnage Mode rebalancing, plus new content added
+- Combined FO2 & FOUC soundtrack (customizable in Sound Options)
+- Complete removal of wallriding
+- Disabled high score uploading and removed the leaderboard menus
+- Fixed vehicle engine audio
+- Full support for multiple savegames with a recreation of the FlatOut 2 player profile system
+- Fully custom soundtrack which is aiming to be modern but fit the game by me and teddyator
+- Functional garage test track ported from FlatOut 2, accessible from the career garage with a new in-game UI created from scratch
+- Improved AI profiles by Twobei 
+- Improved minimap AI colors by Twobei
+- Instant Action mode restored
+- Multilap Time Trial mode with PB ghosts and toggleable props
+- Multiplayer mode without GFWL
+- Name changer in the Options menu
+- Near-perfect support for ultrawide aspect ratios, including proper scaling of the menus, UI and in-game FOV
+- Opponent count changer in the Options menu (7, 11, 31)
+- Playermodel changer in the Options menu, with all AI drivers as well as all FlatOut 1 drivers
+- Point rewards for crashing into people in Deathmatch Derby, instead of just when wrecking them
+- Removed the launcher requirement
+- Rotatable camera in car selection menus with the Page Up/Page Down keys
+- Savegames stored in the game folder, just like FlatOut 2
+- Speedometer changer in the Options menu (FOUC, FO2)
+- Stunt cars available for Single Race mode
+- Stylized AI portraits by Twobei
+- Top Drivers menu restored for Single Race mode
+- Verbose LUA errors
+- Water physics for submerged props and cars
+- Widescreen support, all menu code has been rewritten to support a dynamic aspect ratio with customizable safe-zones
+
+# Credits
+
+selo920 - camera.ini for FO1 cars, collisions for FO1 tracks
+Mutacja - car skins, minimaps for FO1 tracks, Retro Demo tracks and Tough Trucks tracks
+xInfamousRYANx - panels.ini for FO1 and FO2 cars
+CompletelyCordo - descriptions for FO1 and Rally Trophy cars, pacenotes for some rally stages, time trial medal times for Professional handling and Super Author times for rally stages
+Twobei - AI driver profiles, portraits and loading screen art
+teddyator - car skins, custom splash screen, pride flags, help with the new soundtracks, drawn pacenote icons, pacenotes for some rally stages
+Mac21Sas - car skins for Neville
+rowwise - car skins, co-driver voice
+Claude Yones - playtesting
+Bulko - Super Author times for multilap time trials
+
+# Known issues
+
+- AI is incompetent on custom tracks
+- Having Super Author opponents (Times Only is not affected) enabled will place you in 3rd place if you only beat Gold as they count as real opponents
+- Other languages are not supported, you can and will see English text interspersed between localized text
+- Resetting might put you out of bounds in some spots on custom tracks
+- Small parts of the sky might disappear on large tracks (e.g. Rally Trophy tracks)
+- Some custom tracks have objects that can get your car caught and stuck (especially watch out for railings on Retro Demo and Rally Trophy tracks)
+- Some trees don't look correct on FlatOut 1 and Retro Demo tracks
+- The Rally HUD may show the player moving backwards when the stage path is going further away from the finish
+
+# Source code
+
+Main plugin: https://github.com/gaycoderprincess/FlatOutUCChloeCollection
+Time trials: https://github.com/gaycoderprincess/FlatOutUCTimeTrialGhosts
+FlatOut 2 handling: https://github.com/gaycoderprincess/FlatOutUCFO2Handling
+Wallride disabler: https://github.com/gaycoderprincess/FlatOutUCNoWallriding
+Ultrawide support: https://github.com/gaycoderprincess/FlatOutUCUltrawideSupport
+Engine audio fix: https://github.com/gaycoderprincess/FlatOutUCNoDSP
+Verbose LUA errors: https://github.com/gaycoderprincess/FlatOutUCVerboseLUAErrors
+Intro skip: https://github.com/gaycoderprincess/FlatOutUCNoIntro
+Launcher skip: https://github.com/gaycoderprincess/FlatOutUCNoLauncher
+
+# Tools used
+
+My tool for editing cars & tracks: https://github.com/gaycoderprincess/FlatOutW32BGMTool/releases
+My tool for editing the game's database: https://github.com/gaycoderprincess/FlatOut2DBTool/releases
+My tool for fixing washed-out and invalid FlatOut DDS files: https://github.com/gaycoderprincess/FlatOutUCDDSFixer/releases
+xNyaDev's bfstool for packing BFS files: https://github.com/xNyaDev/bfstool
+
+# Disclaimer
+
+This mod does not and will never be compatible with the newest version of the game on Steam, as me and the team do not approve of or tolerate the actions of Strategy First and the ZOOM Platform in any way.
+All they have done in recent times is milk the last cents out of a dead horse for profit by selling a modpack commercially, shamelessly using the work of the community without permission such as in the case of xNyaDev's bfstool, dishing out empty promises of upcoming features, and making the games less stable for little to no actual benefit.
+Not to mention the lackluster Steam Workshop support which is now filled with low-effort reuploads of other people's mods, which are not even functional in some cases.
+If you have money to spare, please support the actual developers of the game. Go buy Wreckfest, get Wreckfest 2 when it releases, and if you want a FlatOut game, buy it used. Thanks.
+
+_Tags: {metadata.tags.join(', ')}_
+
+_Last updated: {metadata.lastUpdated}_

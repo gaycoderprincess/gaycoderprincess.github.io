@@ -1,0 +1,18 @@
+{
+  "title": "Chloe's Corner",
+  "description": "",
+  "tags": ["Big", "Small Projects"],
+  "index": {
+    "headerImage": "/img/mainheader.png",
+    "cards":[
+      ["chloe-collection", "freeman-api"],
+      ["projects", "downloads"]
+    ]
+  },
+  "downloads": {
+    "headerImage": "/img/dlheader.png"
+  },
+  "projects": {
+    "headerImage": "/img/projectheader.png"
+  }
+}
