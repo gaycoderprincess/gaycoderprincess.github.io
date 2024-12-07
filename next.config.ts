@@ -4,8 +4,11 @@ import remarkGfm from "remark-gfm";
 
 const nextConfig: NextConfig = {
     // Configure `pageExtensions` to include markdown and MDX files
-    pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
     output: 'export',
+    images: {
+        unoptimized: true,
+    }
 };
 
 const withMDX = createMDX({
