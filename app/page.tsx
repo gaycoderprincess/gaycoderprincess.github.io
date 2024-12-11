@@ -25,8 +25,13 @@ export default function Home() {
 
                 {siteMetadata.index.cards.map(cards => (<CardGroup key={cards.toString()}>
                         <>
-                        {cards.map((card) => (
-                            <Card contentFile={`index/${card}.mdx`} key={card}/>))}
+                        {cards.map((card) => {
+                            if (card.startsWith("@")) {
+                                return (<Card contentFile={`projects/${card.replace('@', '')}/mini.mdx`} key={card}/>);
+                            } else {
+                                return (<Card contentFile={`index/${card}.mdx`} key={card}/>);
+                            }
+                        })}
                         </>
                     </CardGroup>))}
             </div>

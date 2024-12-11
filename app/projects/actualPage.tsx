@@ -7,10 +7,10 @@ export default async function ProjectsPage(sortingFunnction: ((a: {
     path: string;
     metadata: { name: string; tags: string[]; lastUpdated: string; };
 }, b: { path: string; metadata: { name: string; tags: string[]; lastUpdated: string; }; }) => number)) {
-    const cards = (await Promise.all((await fs.readdir("content/projects-page")).map(async card => {
+    const cards = (await Promise.all((await fs.readdir("content/projects")).map(async card => {
         const {metadata}: {
             metadata: { name: string, tags: string[], lastUpdated: string }
-        } = await import('@/content/projects-page/' + card)
+        } = await import('@/content/projects/' + card + '/main.mdx')
         return {path: card, metadata}
     }))).sort(sortingFunnction)
     return (<>
@@ -33,7 +33,7 @@ export default async function ProjectsPage(sortingFunnction: ((a: {
                 </div>
                 <div>
                     {cards.map((card) => (
-                        <Card contentFile={'projects-page/' + card.path} key={card.path}/>))}
+                        <Card contentFile={'projects/' + card.path + '/mini.mdx'} key={card.path}/>))}
                 </div>
             </CardGroup>
         </div>

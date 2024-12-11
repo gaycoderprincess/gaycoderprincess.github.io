@@ -11,23 +11,25 @@ const Card = async ({
                     }: Readonly<{
     contentFile: string
 }>) => {
+
     const {metadata}: {
         metadata: { image: string, name: string, url: string }
-    } = await import('@/content/' + contentFile)
+    } = await import('@/content/' + contentFile.replace('mini', 'main'))
+
     const content: string = await fs.readFile('content/' + contentFile, {encoding: "utf-8"});
 
-    const {default: MDXContent} = await evaluate(content, {remarkPlugins: [remarkGfm], ...runtime})
+    const {default: MDXContent} = await evaluate(content, {remarkPlugins: [remarkGfm], baseUrl: import.meta.url.replace('app/card.tsx', 'content/') + contentFile, ...runtime})
 
     return (
         <div className={`flex flex-col even:lg:flex-row-reverse odd:lg:flex-row`}>
             <div className="lg:w-1/2 p-4">
                 <a href={metadata.url}>
                     <img className="rounded-xl aspect-video object-cover w-full h-auto"
-                         src={metadata.image} alt="Big Project 1"/>
+                         src={metadata.image} alt={metadata.name}/>
                 </a>
             </div>
             <div className="lg:w-1/2 p-4">
-                <MDXContent components={overrideComponents}/>
+                <MDXContent components={overrideComponents} metadata={metadata}/>
             </div>
         </div>
     )

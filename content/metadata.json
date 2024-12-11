@@ -5,7 +5,7 @@
   "index": {
     "headerImage": "/img/mainheader.png",
     "cards":[
-      ["chloe-collection", "freeman-api"],
+      ["@chloe-collection", "@freeman-api"],
       ["projects", "downloads"]
     ]
   },
