@@ -1,0 +1,13 @@
+export const metadata = {
+    "image": "/img/fo2-ailimit.png",
+}
+
+# v1.10
+
+- Added a more helpful error for running out of pool memory
+- Fixed a crash when starting a race above 16 AI profiles with unique driver skins due to running out of listnodes
+- Fixed a crash when starting a race above 128 cars due to running out of pool memory
+- Fixed an overflow resulting in 127 cars spawning 0 instead
+- Fixed listnodes being reallocated wrong above 31 cars
+- Fixed various references to player data being incorrect
+- Fixed AI names not being customizable if Selo's Car Pack is installed
