@@ -1,5 +1,5 @@
 import ProjectsPage from "@/app/projects/actualPage";
 
 export default async function Projects() {
-    return ProjectsPage((a, b) => a.metadata.name.localeCompare(b.metadata.name))
+    return ProjectsPage((a, b) => (new Date(b.metadata.lastUpdated)).getTime() - (new Date(a.metadata.lastUpdated)).getTime())
 }
