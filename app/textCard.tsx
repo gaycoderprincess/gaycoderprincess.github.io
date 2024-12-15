@@ -3,7 +3,6 @@ import * as fs from "node:fs/promises";
 import {evaluate} from '@mdx-js/mdx'
 import * as runtime from 'react/jsx-runtime'
 import remarkGfm from 'remark-gfm'
-import {overrideComponents} from "@/mdx-components";
 
 const TextCard = async ({
                             contentFile
@@ -16,8 +15,8 @@ const TextCard = async ({
     const {default: MDXContent} = await evaluate(content, {remarkPlugins: [remarkGfm], ...runtime})
 
     return (
-        <div className={"p-4"}>
-            <MDXContent components={overrideComponents}/>
+        <div className={"p-4 prose dark:prose-invert max-w-none"}>
+            <MDXContent/>
         </div>
     )
 }

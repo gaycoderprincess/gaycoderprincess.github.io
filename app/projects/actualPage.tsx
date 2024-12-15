@@ -5,11 +5,11 @@ import Card from "@/app/card";
 
 export default async function ProjectsPage(sortingFunnction: ((a: {
     path: string;
-    metadata: { name: string; tags: string[]; lastUpdated: string; };
-}, b: { path: string; metadata: { name: string; tags: string[]; lastUpdated: string; }; }) => number)) {
+    metadata: { name: string; lastUpdated: string; };
+}, b: { path: string; metadata: { name: string; lastUpdated: string; }; }) => number)) {
     const cards = (await Promise.all((await fs.readdir("content/projects")).map(async card => {
         const {metadata}: {
-            metadata: { name: string, tags: string[], lastUpdated: string }
+            metadata: { name: string, lastUpdated: string }
         } = await import('@/content/projects/' + card + '/main.mdx')
         return {path: card, metadata}
     }))).sort(sortingFunnction)

@@ -25,7 +25,7 @@ export default async function Project({params}: { params: Promise<{ slug: string
         <div className="p-16 bg-gradient-to-b from-[#f38cb1] to-[#f0aec3]">
             <CardGroup>
                 <div className="flex justify-between flex-col lg:flex-row">
-                    <div className={'text-4xl text-center p-4'}>{metadata.name}</div>
+                    <div className={'prose dark:prose-invert max-w-none text-center p-4'}><h1>{metadata.name}</h1></div>
                     <div className={'flex justify-center lg:justify-end'}>
                         <a href={metadata.link}
                            className={'text-center text-white bg-[#f573a3] hover:bg-[#dd6994] px-4 py-2 rounded m-4'}>Download</a>

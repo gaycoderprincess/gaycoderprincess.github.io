@@ -3,7 +3,6 @@ import * as fs from "node:fs/promises";
 import {evaluate} from '@mdx-js/mdx'
 import * as runtime from 'react/jsx-runtime'
 
-import {overrideComponents} from "@/mdx-components";
 import remarkGfm from "remark-gfm";
 
 const Card = async ({
@@ -13,7 +12,7 @@ const Card = async ({
 }>) => {
 
     const {metadata}: {
-        metadata: { image: string, name: string, url: string }
+        metadata: { image: string, name: string, url: string, miniImage?: string }
     } = await import('@/content/' + contentFile.replace('mini', 'main'))
 
     const content: string = await fs.readFile('content/' + contentFile, {encoding: "utf-8"});
@@ -25,11 +24,11 @@ const Card = async ({
             <div className="lg:w-1/2 p-4">
                 <a href={metadata.url}>
                     <img className="rounded-xl aspect-video object-cover w-full h-auto"
-                         src={metadata.image} alt={metadata.name}/>
+                         src={metadata.miniImage ?? metadata.image} alt={metadata.name}/>
                 </a>
             </div>
-            <div className="lg:w-1/2 p-4">
-                <MDXContent components={overrideComponents} metadata={metadata}/>
+            <div className="lg:w-1/2 p-4 prose dark:prose-invert max-w-none">
+                <MDXContent metadata={metadata}/>
             </div>
         </div>
     )
