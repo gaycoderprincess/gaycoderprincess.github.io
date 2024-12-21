@@ -1,0 +1,20 @@
+export const metadata = {
+    "image": "/img/chloe-collection-upd-153.png"
+}
+
+# v1.53
+
+- Added all Sweden tracks from Rally Trophy, totaling to 4 new stages
+- Added a force fullscreen option if you have an empty file called `fullscreen` in your game folder, if for some reason you have issues with borderless windowed mode
+- Added a multiplayer car class for Retro Demo cars
+- Added some chat commands to multiplayer, showing the tickrate, and letting the host kick and ban players while in a race
+- Adjusted some score targets for Carnage Mode
+- Fixed FO2 cars disappearing from the career garage when in the middle of a cup
+- Fixed lag compensation and various other sync issues in multiplayer, bringing the experience to a level comparable to FO2
+- Fixed newly connected players sometimes not respecting the car class for the initial car choice
+- Fixed the in-game windowed toggle not working on the first game launch
+- Fixed the Same as Host car class showing car variations as duplicates during the initial car selection screen
+- Multiplayer AI will now use random skins if their car class is set to Same as Host
+- Players now only show as chatting if they're actively typing, no longer showing the icon if they just have the chat window open
+- Removed the Relative Positions feature from Online Options, it is no longer required with the new sync improvements
+- The multiplayer tickrate is now adjustable server-side up to a maximum of 255 through both a new config file and the in-game chat command `/tickrate (number)`
