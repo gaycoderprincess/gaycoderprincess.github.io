@@ -1,0 +1,14 @@
+export const metadata = {
+	"image": "/img/w32tool.png"
+}
+
+# v8.60
+
+- Added AABB bounds to the text export function to help with body.ini collision bounds for cars
+- Added custom configuration for shaders, allowing you to specify your own keywords for which materials use which shader
+- Added support for lazier splitpoint naming, e.g. Splitpoint1_Left.001 is now recognized as splitpoint number 2
+- Fixed a crash when a mesh in an FBX doesn't have tangents or bitangents
+- Fixed FOUC vertex colors being imported and exported as inverted RGB values
+- Fixed the auto-calculated radius and center of BGM models being offset due to calculations starting from the origin
+- Fixed various shader issues with Rally Trophy models
+- Moved Rally Trophy track models with offsets to a separate StaticMesh dummy
