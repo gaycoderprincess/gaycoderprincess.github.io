@@ -20,8 +20,8 @@ export default function RootLayout({
                 className="bg-[#fee1ed] text-slate-800 dark:bg-slate-800 dark:text-[#fee1ed] p-4 flex flex-col lg:flex-row lg:justify-around">
             <Link className="hover:underline" href="https://bsky.app/profile/gaycoderprincess.bsky.social"> BlueSky:
                 @gaycoderprincess.bsky.social</Link>
-            <Link className="hover:underline" href="https://discord.gg/TB2Rbq2mRq"> Discord:
-                discord.gg/TB2Rbq2mRq</Link>
+            <Link className="hover:underline" href="https://discord.gg/nCASjjRDBm"> Discord:
+                discord.gg/nCASjjRDBm</Link>
             <Link className="hover:underline" href="https://github.com/gaycoderprincess/"> GitHub:
                 gaycoderprincess</Link>
         </footer>
