@@ -1,0 +1,7 @@
+export const metadata = {
+	"image": "/img/w32tool-upd-900.png"
+}
+
+# v9.00
+
+- Added support for import and export of FlatOut 1 track_cdb.gen collision files, note that it currently has issues with shadows
