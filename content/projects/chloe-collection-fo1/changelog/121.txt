@@ -1,0 +1,18 @@
+export const metadata = {
+	"image": "/img/chloe-collection-fo1-upd-121.png"
+}
+
+# v1.21
+
+- Added 2 derby arenas from FlatOut 2
+- Added a display for PB times in time trials
+- Added full support for FlatOut 2 racemaps for all vanilla tracks, including derbies
+- Added Instant Action into the main menu, instantly launching you into a random race with a random car
+- Fixed a crash related to texture loading
+- Fixed AI opponents not slowing down before turns on FlatOut 2 tracks and certain vanilla tracks
+- Fixed packed toml files not being read properly if they didn't have a newline at the end
+- Fixed the FlatOut 2 racemap style getting smaller on higher resolutions
+- Split-screen mode now no longer halves the draw distance of props
+- Time trials now always start you in the same position
+- Time trials now no longer count towards track wins
+- Winning in a Wrecking Derby or Frag Derby now counts towards track wins
