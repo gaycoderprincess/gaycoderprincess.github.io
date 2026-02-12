@@ -1,4 +1,3 @@
-import siteMetadata from "@/content/metadata.json"
 import CardGroup from "@/app/cardGroup";
 import * as fs from "node:fs/promises";
 import Card from "@/app/card";
