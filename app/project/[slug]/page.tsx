@@ -20,8 +20,6 @@ export default async function Project({params}: { params: Promise<{ slug: string
         .map(file => parseInt(file.substring(0, file.length - 4)))
         .sort((a, b) => b-a)
     return (<>
-        <img className="w-full aspect-[21/9] object-cover" src={metadata.image}
-             alt="Header Image"/>
         <div className="p-16 bg-gradient-to-b from-[#f38cb1] to-[#f0aec3]">
             <CardGroup>
                 <div className="flex justify-between flex-col lg:flex-row">

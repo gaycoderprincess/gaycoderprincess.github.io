@@ -14,8 +14,6 @@ export default async function ProjectsPage(sortingFunnction: ((a: {
         return {path: card, metadata}
     }))).sort(sortingFunnction)
     return (<>
-        <img className="w-full aspect-[21/9] object-cover" src={siteMetadata.projects.headerImage}
-             alt="Header Image"/>
         <div className="p-16 bg-gradient-to-b from-[#f38cb1] to-[#f0aec3]" id={'content'}>
             <CardGroup>
                 <div className={'grid grid-cols-1 lg:grid-cols-5'} id={'sorting'}>
