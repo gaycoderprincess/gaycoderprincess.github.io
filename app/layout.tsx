@@ -24,6 +24,8 @@ export default function RootLayout({
                 discord.gg/nCASjjRDBm</Link>
             <Link className="hover:underline" href="https://github.com/gaycoderprincess/"> GitHub:
                 gaycoderprincess</Link>
+            <Link className="hover:underline" href="https://codeberg.org/gaycoderprincess/"> Codeberg:
+                gaycoderprincess</Link>
         </footer>
     )
 
