@@ -26,6 +26,8 @@ export default function RootLayout({
                 gaycoderprincess</Link>
             <Link className="hover:underline" href="https://codeberg.org/gaycoderprincess/"> Codeberg:
                 gaycoderprincess</Link>
+            <Link className="hover:underline" href="https://www.patreon.com/gaycoderprincess/"> Patreon:
+                gaycoderprincess</Link>
         </footer>
     )
 
