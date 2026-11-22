@@ -18,15 +18,15 @@ export default function RootLayout({
     const Contact = () => (
         <footer id="contact"
                 className="bg-[#fee1ed] text-slate-800 dark:bg-slate-800 dark:text-[#fee1ed] p-4 flex flex-col lg:flex-row lg:justify-around">
-            <Link className="hover:underline" href="https://bsky.app/profile/gaycoderprincess.bsky.social"> BlueSky:
-                @gaycoderprincess.bsky.social</Link>
             <Link className="hover:underline" href="https://discord.gg/nCASjjRDBm"> Discord:
                 discord.gg/nCASjjRDBm</Link>
-            <Link className="hover:underline" href="https://github.com/gaycoderprincess/"> GitHub:
+            <Link className="hover:underline" href="https://www.patreon.com/gaycoderprincess/"> Patreon:
                 gaycoderprincess</Link>
             <Link className="hover:underline" href="https://codeberg.org/gaycoderprincess/"> Codeberg:
                 gaycoderprincess</Link>
-            <Link className="hover:underline" href="https://www.patreon.com/gaycoderprincess/"> Patreon:
+            <Link className="hover:underline" href="https://bsky.app/profile/gaycoderprincess.bsky.social"> BlueSky:
+                @gaycoderprincess.bsky.social</Link>
+            <Link className="hover:underline" href="https://github.com/gaycoderprincess/"> GitHub:
                 gaycoderprincess</Link>
         </footer>
     )

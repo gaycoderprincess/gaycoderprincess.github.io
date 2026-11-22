@@ -1,0 +1,111 @@
+export const metadata = {
+    "image": "/img/mischeader.png",
+    "miniImage": "/img/nfsmw-modloader.webp",
+    "name": "Most Wanted Modular Mod Loader",
+    "lastUpdated": "2026-11-19 17:25",
+    "link": "https://codeberg.org/gaycoderprincess/MostWantedCwoeeModLoader/releases"
+}
+
+A utility for Need for Speed: Most Wanted that allows various mods to be loaded without modifying the core game files  
+Mods created for this loader will not require the use of Binary, VLTEd, OGVI or similar, and in most cases will be simple drag and drop installs with zero additional steps
+
+Included in the mod is a basic example of an add-on car converted to work with the tool (used with permission from its dev, Roski)
+
+ONLY supports Unlimiter v4.0.1.1337 and up!! Older versions of Unlimiter will not work whatsoever, not having Unlimiter installed works but will limit you to 127 cars total
+
+## Disclaimer
+
+Due to the current programming landscape, I feel that it's necessary to explicitly state that this project had zero assistance or any other kind of involvement from any sort of "AI agent" and it never will.  
+This mod was entirely built by hand, by a human being, and I believe that any project that cannot also claim this about itself is not worth people's time. The only acceptable amount of AI use is zero AI use.
+
+## Installation
+
+- Make sure you have v1.3 of the game, as this is the only version this plugin is compatible with. (exe size of 6029312 bytes)
+- Plop the files into your game folder.
+- Enjoy, nya~ :3
+
+## Features
+
+- Fully modular design, 90% of mods made for this tool will not conflict with each other and can just be dragged and dropped into the game directory
+- Support for creating and modifying car & car part data
+- Support for creating and modifying eLightMaterial entries
+- Support for creating and modifying localization entries
+- Support for creating and modifying preset cars
+- Support for creating and modifying VLT data
+- Support for loading new textures, FNGs and other miscellaneous file types
+- Tools to automatically convert data from the game files into the new format, plus a guide on how to use it, all in the "Developer stuff" folder
+
+## Converting vehicles
+
+- Install the mod as you normally would (and create a backup)
+- Drag `GlobalB.lzc` onto `MostWantedCarDataTool_gcp.exe` from the `External Converter Tools` folder
+- In the newly created `GlobalB_out` folder, copy the desired car's bounds and car files into a new mods folder and rename them to `bounds.dat` and `car.toml` respectively
+- If converting part replacements for an existing car (or global parts such as spoilers/paints/vinyls/etc), do the same with the car's `parts.toml` file instead
+- Copy the contents of `VLT Converter Tools` into your scripts folder (note that the mod loader also needs to be installed)
+- Launch the game, press F5, navigate into `Mod Loader Debug`, and press `dump vlt data`
+- In the newly created `CwoeeModLoader_out` folder, copy the desired car's vltoverrides file out into the previously created mods folder and rename it to `vltoverrides.toml`
+- If your car uses custom camera angles, repeat this step with the `dump frontend camera vlt data` option and paste the data for each of your car's cameras from the `CwoeeModLoader_out/angles` and `CwoeeModLoader_out/screens` files into `vltoverrides.toml`
+- View the original mod's .end file in a text editor and search for `add_or_update_string` lines, and move them into a `localization.toml` into the car's mods folder using the same `A = "B"` syntax as the given examples
+- Create a new (uncompressed) texture archive with the manufacturer (if applicable) and secondary car logos, named `textures.tpk` or `textures.bin` in the car's mods folder (you can do this with any tool that edits texture packs, such as XNFSTPKTool or Binary)
+
+## Technical details
+
+Each mod folder is treated as its own separate set of data, and can load the following:
+- `localization.toml` - list of localization entries to add to the game
+- `vltoverrides.toml` - list of VLT changes to apply to the game
+- `car.toml` - contains a car's CarPart list and CarTypeInfo data
+- `parts.toml` - contains an additional CarPart list for replacements or global part changes such as custom paints, neons, etc.
+- `bounds.dat` - collision geometry data for the car defined in `car.toml`
+- `textures.bin` or `textures.tpk` - loaded as a generic resource file if present, useful for manufacturer logos but can be used for anything
+- `streamedtextures.bin` or `streamedtextures.tpk` - loaded as a streamed texture pack if present, this is the file type usually used for car vinyls
+- `presets/` - files inside this folder are loaded as raw PresetCar data
+- `materials/` - `.toml` files inside this folder are loaded as eLightMaterial data
+- `resources/` - `.bin`, `.tpk` and `.fng` files inside this folder are loaded as generic resource files
+- `vltoverrides/` - `.toml` files inside this folder are loaded as additional `vltoverrides.toml` files
+- `carfiles/` - `GEOMETRY.BIN`, `TEXTURES.BIN`, `PREVINYL.BIN` and `VINYLS.BIN` for the car defined in `car.toml` can be loaded from here instead of the CARS folder
+
+Additional info for `localization.toml`:
+- The base `localization.toml` file will create/override localization entries for all languages
+- To override specific languages only, name the file as follows:
+- `localization_english.toml`
+- `localization_french.toml`
+- `localization_german.toml`
+- `localization_italian.toml`
+- `localization_spanish.toml`
+- `localization_dutch.toml`
+- `localization_swedish.toml`
+- `localization_danish.toml`
+- `localization_korean.toml`
+- `localization_chinese.toml`
+- `localization_japanese.toml`
+- `localization_thai.toml`
+- `localization_polish.toml`
+- `localization_finnish.toml`
+- They will take priority over the global `localization.toml` file, so feel free to add English text to that one and then add unique text only for certain languages
+
+Additional info for `vltoverrides.toml`:
+- When creating a new collection, it's usually recommended to take a base collection that's either created by this tool or never used by the game in order to avoid corruption (i.e. for pvehicle entries, use `BaseCollectionName = "racers"`, for performance data, use `BaseCollectionName = "default"`, however basing your custom `_top` node off of your custom base node is fine)
+- Supported field types (case-sensitive):
+- `"create"` - adds a value to the field list, might be required if a field exists in other collections of the same class but not this one, also required if you're resizing an array
+- `"remove"` - removes a value from the field list
+- `"float"` - floating point values
+- `"int"` - integer values
+- `"uint"` - unsigned integer values, for integers higher than 2147483647
+- `"int8"` - integer values between 0 and 255
+- `"int16"` - integer values between 0 and 65535
+- `"bool"` or `"boolean"` - boolean values, `true` or `false`
+- `"hash"` or `"raw_hash"` - hexadecimal integer values, in the format `0x12345678`
+- `"string"` - string value
+- `"stringkey"` - string value, for fields of the type `Attrib::StringKey` such as a car's `MODEL` field
+- `"stringhash32"` - string value to be hashed with the `stringhash32` algorithm, used for race start, finish, checkpoint & shortcut lists
+- `"bstringhash"` - string value to be hashed with the `bStringHash` algorithm, used for part icons in a car's `frontend` collections
+- `"refspec"` - field of the type `Attrib::RefSpec` that points to another collection, such as a car's performance fields
+- `"upgradespec"` - field of the type `UpgradeSpecs` that points to another collection with a given upgrade level, such as a car's `ShiftSND` or `TurboSND` fields
+- (you may need to look up which field is of which type, they aren't always obvious since VLTEd/OGVI both obfuscate them for no apparent reason)
+
+Additional info for `parts.toml`:
+- Adding `AddToTypeNameTable = "NAME"` to the top of the file will create a car type name called "NAME" in the car type list without also creating a CarTypeInfo, Unlimiter uses this to define the car type "EXTRA" which contains neons, tires, etc.
+- Categories named `[SlotTypeName0]` to `[SlotTypeName138]` will replace entries in DefaultSlotTypeNameTable, Unlimiter uses this to make more car parts customizable
+- Unlike `car.toml`, each car part entry requires a `CarTypeName` field in this file, specifying which car (or shared group) the part is for
+
+_Last updated: {metadata.lastUpdated}_
